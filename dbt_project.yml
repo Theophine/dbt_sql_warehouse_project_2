@@ -40,6 +40,14 @@ clean-targets:         # directories to be removed by `dbt clean`
 
 models:
   dbt_sql_warehouse_project:
-    # Applies to all files under models/example/
+    # Applies to all files under models/their_respective_folders/
     bronze:
       +materialized: table
+      +schema: bronze
+    silver: 
+      +materialized: table
+      +schema: silver
+    gold: 
+      +materialized: view
+      +schema: gold
+
