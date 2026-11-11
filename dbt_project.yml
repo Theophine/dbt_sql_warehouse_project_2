@@ -42,12 +42,11 @@ models:
   dbt_sql_warehouse_project:
     # Applies to all files under models/their_respective_folders/
     bronze:
-      +materialized: table
+      +materialized: table 
       +schema: bronze
     silver: 
       +materialized: table
       +schema: silver
-    gold: 
-      +materialized: view
+    gold:
+      +materialized: view 
       +schema: gold
-
