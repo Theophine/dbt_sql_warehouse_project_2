@@ -1,6 +1,6 @@
 sources:
   - name: dbo
-    database: dbt_dev_warehouse_2
+    database: "{{env_var('DBT_DATABASE')}}"
     schema: dbo
 
     config:
