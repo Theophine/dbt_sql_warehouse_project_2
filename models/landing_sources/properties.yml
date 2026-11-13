@@ -1,0 +1,20 @@
+sources:
+  - name: dbo
+    database: dbt_dev_warehouse_2
+    schema: dbo
+
+    config:
+        freshness: # changed to config in v1.9
+          warn_after:
+            count: 2500
+            period: hour
+        # changed to config in v1.10
+        loaded_at_field: created_at
+
+    tables:
+      - name: orders
+      - name: products
+      - name: reviews
+      - name: users
+      
+    

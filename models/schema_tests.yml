@@ -1,0 +1,28 @@
+models:
+  - name: bronze_orders
+    columns:
+      - name: id
+        data_tests:
+          - unique
+          - not_null
+      
+
+  - name: bronze_products
+    columns:
+      - name: id
+        data_tests:
+        - unique
+        - not_null
+        - relationships:
+                arguments:
+                  to: ref('bronze_orders')
+                  field: product_id
+
+      - name: category
+        data_tests:
+        - accepted_values:
+            arguments: # available in v1.10.5 and higher. Older versions can set the <argument_name> as the top-level property.
+              values: ['Gadget', 'Gizmo', 'Doohickey']
+              config: 
+                severity: warn
+        
