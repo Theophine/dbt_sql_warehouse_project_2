@@ -1,0 +1,10 @@
+snapshots:
+  - name: product_snapshot
+    relation: source("dbo", "products")
+    description:  SCD for product source table
+    config:
+      database: dbt_dev_warehouse_2
+      schema: bronze
+      strategy: timestamp 
+      unique_key: id
+      updated_at: created_at

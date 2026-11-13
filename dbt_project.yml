@@ -39,14 +39,20 @@ clean-targets:         # directories to be removed by `dbt clean`
 # using the `{{ config(...) }}` macro.
 
 models:
-  dbt_sql_warehouse_project:
-    # Applies to all files under models/their_respective_folders/
-    bronze:
-      +materialized: table 
-      +schema: bronze
-    silver: 
-      +materialized: table
-      +schema: silver
-    gold:
-      +materialized: view 
-      +schema: gold
+  #dbt_sql_warehouse_project: #note that you can also specify specifc resource path instead of the project level
+  # Applies to all files under models/their_respective_folders/
+  bronze:
+    +materialized: table 
+    +schema: bronze
+  silver: 
+    +materialized: table
+    +schema: silver
+  gold:
+    +materialized: view 
+    +schema: gold
+  ephemerals:
+    +materialized: ephemeral
+
+seeds:
+  +materialized: seed
+  +schema: bronze

@@ -1,0 +1,1 @@
+select * from {{ref("first_ephermeral_example")}}

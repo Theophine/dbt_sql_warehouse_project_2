@@ -4,7 +4,7 @@ r.product_id,
 p.product_name,
 avg(r.rating) as avg_rating
 from 
-{{ ref("bronze_reviews")}} r 
+{{ ref("reviews_snapshot")}} r 
 left join 
 {{ref("silver_products")}} p 
 on r.product_id = p.id

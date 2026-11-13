@@ -6,4 +6,5 @@ category,
 ean,
 vendor, 
 price
-from {{ ref("bronze_products")}}
+from {{ ref("product_snapshot")}}
+where dbt_valid_to is Null

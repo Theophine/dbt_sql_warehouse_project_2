@@ -1,0 +1,10 @@
+snapshots:
+  - name: reviews_snapshot
+    relation: source("dbo", "reviews")
+    description:  SCD for reviews source table
+    config:
+      database: dbt_dev_warehouse_2
+      schema: bronze
+      strategy: timestamp 
+      unique_key: id
+      updated_at: created_at 
